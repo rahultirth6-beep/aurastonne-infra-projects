@@ -14,11 +14,35 @@ if (Number.isNaN(port) || port <= 0) {
 
 const basePath = process.env.BASE_PATH ?? "/";
 
+const ensureModuleEntrypoint = () => ({
+  name: "ensure-module-entrypoint",
+  transformIndexHtml(html: string) {
+    if (html.includes('src="/src/main.tsx"')) {
+      return html;
+    }
+
+    return {
+      html,
+      tags: [
+        {
+          tag: "script",
+          attrs: {
+            type: "module",
+            src: "/src/main.tsx",
+          },
+          injectTo: "body",
+        },
+      ],
+    };
+  },
+});
+
 export default defineConfig({
   base: basePath,
   plugins: [
     react(),
     tailwindcss(),
+    ensureModuleEntrypoint(),
     runtimeErrorOverlay(),
     ...(process.env.NODE_ENV !== "production" &&
     process.env.REPL_ID !== undefined
