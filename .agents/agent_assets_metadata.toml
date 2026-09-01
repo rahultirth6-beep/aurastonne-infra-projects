@@ -1,0 +1,212 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "Q18g7glXO565uYspqCF0l"
+uri = "file://artifacts/aurastonne/public/images/hero-bg.png"
+type = "image"
+title = "hero stone concrete courtyard"
+
+[[generated]]
+id = "oP3HRVp1x58rQbQ9oqgNO"
+uri = "file://artifacts/aurastonne/public/images/service-cobblestone.png"
+type = "image"
+title = "cobblestone pathway"
+
+[[generated]]
+id = "5oY9jv0ZMAWso6tEr4DZY"
+uri = "file://artifacts/aurastonne/public/images/service-wall-cladding.png"
+type = "image"
+title = "wall cladding stone"
+
+[[generated]]
+id = "zpGYNQ8H3Y-UggNpIsgQ5"
+uri = "file://artifacts/aurastonne/public/images/service-paver-blocks.png"
+type = "image"
+title = "paver blocks driveway"
+
+[[generated]]
+id = "J3pdeXn4gQJ3j_s_8q2B5"
+uri = "file://artifacts/aurastonne/public/images/service-chequered-tiles.png"
+type = "image"
+title = "chequered tiles floor"
+
+[[generated]]
+id = "YA--WwIljUFdF__T49BZh"
+uri = "file://artifacts/aurastonne/public/images/service-ceramic-tiles.png"
+type = "image"
+title = "ceramic tiles interior"
+
+[[generated]]
+id = "vx8xPIBFQmYRsXhv9Llk7"
+uri = "file://artifacts/aurastonne/public/images/service-garden-benches.png"
+type = "image"
+title = "garden bench hardscape"
+
+[[generated]]
+id = "LHKCBpn77BdwBrc5hHmXb"
+uri = "file://artifacts/aurastonne/public/images/service-stamp-concrete.png"
+type = "image"
+title = "stamp concrete patio"
+
+[[generated]]
+id = "QudRO64EdMffwh4Jy-Zhm"
+uri = "file://artifacts/aurastonne/public/images/service-artificial-grass.png"
+type = "image"
+title = "artificial grass landscape"
+
+[[generated]]
+id = "N27ToJJUksbOR0ytnEKvw"
+uri = "file://artifacts/aurastonne/public/images/service-vinyl-flooring.png"
+type = "image"
+title = "luxury vinyl flooring"
+
+[[generated]]
+id = "a4T_s5fyQN2Bz41V9mTyU"
+uri = "file://attached_assets/generated_images/cast_iron_garden_bench_0ccb.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "L1z4x3qNXyC5oYN-9nFfZ"
+uri = "file://attached_assets/generated_images/professional_hardscape_construction_larg_e720.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "xWmweuZMWNO6EdEbYy8ld"
+uri = "file://attached_assets/generated_images/surface_preparation_for_flooring_ddbd.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "C1BIAu9SGkOj5HtsFQ2kM"
+uri = "file://attached_assets/generated_images/decorative_cement_tiles_flooring_7b13.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "QVsQYpMSLakxg_KUZQ2Re"
+uri = "file://attached_assets/generated_images/cast_iron_fiber_reinforced_6fa9.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "M-tJOKJUKEPinCFFEw4NP"
+uri = "file://attached_assets/generated_images/luxury_interior_design_premium_80f7.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "tHGjFEbTcDqw32X6VovQz"
+uri = "file://attached_assets/generated_images/outdoor_chequered_cement_tiles_1358.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "gF9M7VAXqsDMFUA7cGvUi"
+uri = "file://attached_assets/generated_images/decorative_stamp_concrete_driveway_2ef3.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "yp1LdbxU6fBMnUeHf0Zuq"
+uri = "file://attached_assets/generated_images/artificial_grass_installation_in_c509.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "D28U9guHaOMiiULdYgUS7"
+uri = "file://attached_assets/generated_images/luxury_vinyl_flooring_installed_9cb5.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "1uHeM6_TuC6kpAiG-PKh7"
+uri = "file://attached_assets/generated_images/outdoor_hardscape_project_large_af6a.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "us-2ABmmyj7kFDgcvwXVH"
+uri = "file://attached_assets/generated_images/professional_tile_installation_on_54cb.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "BV39tsH0--rCI_b_fcwSm"
+uri = "file://attached_assets/generated_images/close_up_of_skilled_a070.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "QTjcEgfAuT2y1VtvabyB7"
+uri = "file://attached_assets/generated_images/paver_block_installation_in_74ff.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "l7va65NLNW7IBAooZLX_n"
+uri = "file://attached_assets/generated_images/cobblestone_installation_in_progress_548b.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "sCCtN9XPwk_temA8M-QLL"
+uri = "file://attached_assets/generated_images/glossy_epoxy_flooring_in_e808.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "-7PalpzqmttQV1mOO2PbU"
+uri = "file://attached_assets/generated_images/epoxy_flooring_installation_in_2cca.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "4D0EyJULfDsxR2OhrLpHX"
+uri = "file://attached_assets/generated_images/ultra_luxury_indian_living_bc4d.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "U4vzCnq5qmqvkGO3XPZIb"
+uri = "file://attached_assets/generated_images/premium_indian_master_bedroom_adde.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "pOCYIIQ2goDHYI1f_f0Sd"
+uri = "file://attached_assets/generated_images/luxury_indian_hotel_lobby_6b9a.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "VrgD5aie16zh8_yvxhALk"
+uri = "file://attached_assets/generated_images/high_end_modular_kitchen_5893.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "kdgZ5CXMtxtRyZtz8WD_G"
+uri = "file://attached_assets/generated_images/modern_indian_flat_interior_2c42.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "bqlG96wQXJ9C6cNB5hcch"
+uri = "file://attached_assets/generated_images/elegant_indian_apartment_dining_c3db.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "OVTtqLkPYaCev5SC71z7I"
+uri = "file://attached_assets/generated_images/luxury_modular_kitchen_indian_c139.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "ZstF_RkWJozNhcbF-gbae"
+uri = "file://attached_assets/generated_images/sleek_parallel_kitchen_in_f01b.png"
+type = "image"
+title = "generated_image"

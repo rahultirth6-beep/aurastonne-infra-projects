@@ -1,0 +1,2 @@
+
+[build]base ="/"command = "npm run build"publish ="artifacts/aurastonne/dist"
