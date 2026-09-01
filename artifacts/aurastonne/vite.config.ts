@@ -23,19 +23,29 @@ const ensureModuleEntrypoint = (isBuild: boolean) => ({
       return html;
     }
 
-    return {
-      html,
-      tags: [
-        {
-          tag: "script",
-          attrs: {
-            type: "module",
-            src: isBuild ? "/assets/app.js" : "/src/main.tsx",
-          },
-          injectTo: "body",
+    const tags = [
+      {
+        tag: "script",
+        attrs: {
+          type: "module",
+          src: isBuild ? "/assets/app.js" : "/src/main.tsx",
         },
-      ],
-    };
+        injectTo: "body",
+      },
+    ];
+
+    if (isBuild) {
+      tags.push({
+        tag: "link",
+        attrs: {
+          rel: "stylesheet",
+          href: "/assets/app.css",
+        },
+        injectTo: "head-prepend",
+      });
+    }
+
+    return { html, tags };
   },
 });
 
@@ -83,6 +93,7 @@ export default defineConfig(async ({ command }) => {
               },
               output: {
                 entryFileNames: "assets/[name].js",
+                assetFileNames: "assets/[name][extname]",
               },
             },
           }
