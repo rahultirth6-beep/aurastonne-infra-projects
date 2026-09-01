@@ -1,9 +1,9 @@
-[buid]
-base = "/"
-command = npm run build"
-cat > netlify.toml <<'EOF'
-[buid]
-base = "/"
-command = npm run build"
-command = "npm run build"
-publish = "artifacts/aurastonne/dist"
+[build]
+  base = "."
+  command = "pnpm --filter @workspace/aurastonne run build"
+  publish = "artifacts/aurastonne/dist/public"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
