@@ -14,7 +14,9 @@ if (Number.isNaN(port) || port <= 0) {
 
 const basePath = process.env.BASE_PATH ?? "/";
 
-const ensureModuleEntrypoint = () => ({
+const artifactRoot = path.resolve(import.meta.dirname);
+
+const ensureModuleEntrypoint = (isBuild: boolean) => ({
   name: "ensure-module-entrypoint",
   transformIndexHtml(html: string) {
     if (html.includes('src="/src/main.tsx"')) {
@@ -28,7 +30,7 @@ const ensureModuleEntrypoint = () => ({
           tag: "script",
           attrs: {
             type: "module",
-            src: "/src/main.tsx",
+            src: isBuild ? "/assets/app.js" : "/src/main.tsx",
           },
           injectTo: "body",
         },
@@ -37,51 +39,68 @@ const ensureModuleEntrypoint = () => ({
   },
 });
 
-export default defineConfig({
-  base: basePath,
-  plugins: [
-    react(),
-    tailwindcss(),
-    ensureModuleEntrypoint(),
-    runtimeErrorOverlay(),
-    ...(process.env.NODE_ENV !== "production" &&
-    process.env.REPL_ID !== undefined
-      ? [
-          await import("@replit/vite-plugin-cartographer").then((m) =>
-            m.cartographer({
-              root: path.resolve(import.meta.dirname, ".."),
-            }),
-          ),
-          await import("@replit/vite-plugin-dev-banner").then((m) =>
-            m.devBanner(),
-          ),
-        ]
-      : []),
-  ],
-  resolve: {
-    alias: {
-      "@": path.resolve(import.meta.dirname, "src"),
-      "@assets": path.resolve(import.meta.dirname, "..", "..", "attached_assets"),
+export default defineConfig(async ({ command }) => {
+  const isBuild = command === "build";
+
+  return {
+    base: basePath,
+    plugins: [
+      react(),
+      tailwindcss(),
+      ensureModuleEntrypoint(isBuild),
+      runtimeErrorOverlay(),
+      ...(process.env.NODE_ENV !== "production" &&
+      process.env.REPL_ID !== undefined
+        ? [
+            await import("@replit/vite-plugin-cartographer").then((m) =>
+              m.cartographer({
+                root: path.resolve(artifactRoot, ".."),
+              }),
+            ),
+            await import("@replit/vite-plugin-dev-banner").then((m) =>
+              m.devBanner(),
+            ),
+          ]
+        : []),
+    ],
+    resolve: {
+      alias: {
+        "@": path.resolve(artifactRoot, "src"),
+        "@assets": path.resolve(artifactRoot, "..", "..", "attached_assets"),
+      },
+      dedupe: ["react", "react-dom"],
     },
-    dedupe: ["react", "react-dom"],
-  },
-  root: path.resolve(import.meta.dirname),
-  build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
-    emptyOutDir: true,
-  },
-  server: {
-    port,
-    strictPort: true,
-    host: "0.0.0.0",
-    allowedHosts: true,
-    fs: {
-      strict: true,
+    root: artifactRoot,
+    build: {
+      outDir: path.resolve(artifactRoot, "dist/public"),
+      emptyOutDir: true,
+      ...(isBuild
+        ? {
+            rollupOptions: {
+              input: {
+                index: path.resolve(artifactRoot, "index.html"),
+                app: path.resolve(artifactRoot, "src/main.tsx"),
+              },
+              output: {
+                entryFileNames: "assets/[name].js",
+              },
+            },
+          }
+        : {}),
     },
-  },
-  preview: {
-    port,
-    host: "0.0.0.0",
-    allowedHosts: true,
-  },
+    server: {
+      port,
+      strictPort: true,
+      host: "0.0.0.0",
+      allowedHosts: true,
+      fs: {
+        strict: true,
+      },
+    },
+    preview: {
+      port,
+      host: "0.0.0.0",
+      allowedHosts: true,
+    },
+  };
 });
