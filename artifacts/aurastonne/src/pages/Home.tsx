@@ -180,6 +180,8 @@ function OurWorkGallery() {
               <img
                 src={item.src}
                 alt={item.label}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -220,7 +222,13 @@ function QuoteForm() {
   return (
     <section className="py-32 relative overflow-hidden perspective-1000" id="quote">
       <div className="absolute inset-0">
-        <img src="/images/hero-bg.png" className="w-full h-full object-cover opacity-10 filter grayscale sepia" alt="" />
+        <img
+          src="/images/hero-bg.webp"
+          className="w-full h-full object-cover opacity-10 filter grayscale sepia"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/60" />
         <MandalaRing className="absolute -bottom-40 -left-40 w-[600px] h-[600px] text-primary opacity-[0.03]" />
       </div>
@@ -482,8 +490,10 @@ export default function Home() {
           />
 
           <img 
-            src="/images/hero-bg.png" 
+            src="/images/hero-bg.webp" 
             alt="Courtyard" 
+            fetchPriority="high"
+            decoding="async"
             className="w-full h-full object-cover object-center relative z-[-1] sepia-[0.3]"
           />
           <div className="absolute inset-0 bg-background/80 mix-blend-multiply" />
